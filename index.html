@@ -3,10 +3,149 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
   </head>
   <body>
-    <h1>これはテストファイルです</h1>
+    <h1>Yuudo | ここに文章が入ります</h1>
     <p>ここに本文が入ります</p>
 
+
+    <!-- START ChartJS -->
+    <h2>折れ線グラフの見本です</h2>
+    <canvas id="myChart01"></canvas>
+    <h2>棒グラフの見本です</h2>
+    <canvas id="myChart02"></canvas>
+    <h2>レーダーチャートの見本です</h2>
+    <canvas id="myChart03"></canvas>
+    <h2>ポーラチャートの見本です</h2>
+    <canvas id="myChart04"></canvas>
+    <h2>パイチャートの見本です</h2>
+    <canvas id="myChart05"></canvas>
+    <h2>ドーナツグラフの見本です</h2>
+    <canvas id="myChart06"></canvas>
+    <!-- END ChartJS -->
+
+    <!-- START ChartJS -->
+    <script>
+      //折れ線グラフのデータ
+        //canvasのidを指定, 今回は2次元なので"2d"
+        var ctx = document.getElementById('myChart01').getContext('2d');
+        var myChart01 = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+              label: 'apples',
+              data: [12, 19, 3, 17, 6, 3, 7],
+              backgroundColor: "rgba(153,255,51,0.4)"
+            }, {
+              label: 'oranges',
+              data: [2, 29, 5, 5, 2, 3, 10],
+              backgroundColor: "rgba(255,153,0,0.4)"
+            }]
+          }
+        });
+
+      //棒グラフのデータ
+        var ctx = document.getElementById('myChart02').getContext('2d');
+        var myChart02 = new Chart(ctx, {
+          //棒グラフにするときは、typeを"bar"に変更する
+          type: 'bar',
+          data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+              label: 'apples',
+              data: [12, 19, 3, 17, 6, 3, 7],
+              backgroundColor: "rgba(153,255,51,0.4)"
+            }, {
+              label: 'oranges',
+              data: [2, 29, 5, 5, 2, 3, 10],
+              backgroundColor: "rgba(255,153,0,0.4)"
+            }]
+          }
+        });
+
+      // レーダーチャート
+        var ctx = document.getElementById('myChart03').getContext('2d');
+        var myChart03 = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+              label: 'apples',
+              data: [12, 19, 3, 17, 6, 3, 7],
+              backgroundColor: "rgba(153,255,51,0.4)"
+            }, {
+              label: 'oranges',
+              data: [2, 29, 5, 5, 2, 3, 10],
+              backgroundColor: "rgba(255,153,0,0.4)"
+            }]
+          }
+        });
+
+      // ポーラチャート
+        var ctx = document.getElementById('myChart04').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'polarArea',
+          data: {
+            labels: ["M", "T", "W", "T", "F", "S", "S"],
+            datasets: [{
+              backgroundColor: [
+                "#2ecc71",
+                "#3498db",
+                "#95a5a6",
+                "#9b59b6",
+                "#f1c40f",
+                "#e74c3c",
+                "#34495e"
+              ],
+              data: [12, 19, 3, 17, 28, 24, 7]
+            }]
+          }
+        });
+
+      // ドーナツグラフ
+        var ctx = document.getElementById('myChart05').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ["M", "T", "W", "T", "F", "S", "S"],
+            datasets: [{
+              backgroundColor: [
+                "#2ecc71",
+                "#3498db",
+                "#95a5a6",
+                "#9b59b6",
+                "#f1c40f",
+                "#e74c3c",
+                "#34495e"
+              ],
+              data: [12, 19, 3, 17, 28, 24, 7]
+            }]
+          }
+        });
+
+      // ドーナツグラフ
+        var ctx = document.getElementById('myChart06').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ["M", "T", "W", "T", "F", "S", "S"],
+            datasets: [{
+              backgroundColor: [
+                "#2ecc71",
+                "#3498db",
+                "#95a5a6",
+                "#9b59b6",
+                "#f1c40f",
+                "#e74c3c",
+                "#34495e"
+              ],
+              data: [12, 19, 3, 17, 28, 24, 7]
+            }]
+          }
+        });
+    </script>
+    <!-- END ChartJS -->
   </body>
 </html>
